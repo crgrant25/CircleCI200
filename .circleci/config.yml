@@ -1,8 +1,15 @@
 version: 2.1
 
-steps:
-      - run: mvn test install
-      - run:
-          command: |
-            echo "Arbitrary multi-line bash"
-            echo ansible-playbook -i hosts remoteplaybook.yml --limit ec2-user@18.118.2.26
+orbs:
+  node: circleci/node@4.1.0
+
+jobs:
+
+  build:
+    docker:
+    - image: circleci/openjdk:stretch
+    steps:
+    - checkout
+    - run:
+        name: Giving permissions
+        command: mvn clean install
