@@ -8,7 +8,7 @@ jobs:
   build:
     docker:
     - image: circleci/openjdk:stretch
-    Steps:
+    steps:
     - checkout
     - run:
         name: Giving permissions
