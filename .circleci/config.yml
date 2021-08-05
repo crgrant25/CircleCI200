@@ -11,5 +11,5 @@ jobs:
     steps:
     - checkout
     - run:
-        name: Giving permissions
+        name: Run Maven to Build Project
         command: mvn clean install
